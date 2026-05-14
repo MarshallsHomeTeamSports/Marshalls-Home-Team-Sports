@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marshall's Home Team Sports — Glove Repair & Coaching in Waterdown, ON</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..900,0..100;1,9..144,300..900,0..100&family=Archivo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          cream: '#F2EBDC',
+          paper: '#EADFC8',
+          oxblood: '#6B1817',
+          oxbloodDark: '#4A0F0E',
+          ink: '#1A1613',
+          leather: '#8B5E34',
+          tan: '#B8894A',
+          forest: '#2B3A2B',
+          mustard: '#C19A3E',
+        },
+        fontFamily: {
+          display: ['Fraunces', 'serif'],
+          body: ['Archivo', 'sans-serif'],
+        }
+      }
+    }
+  }
+</script>
+<style>
+  body {
+    font-family: 'Archivo', sans-serif;
+    background: #F2EBDC;
+    color: #1A1613;
+    overflow-x: hidden;
+  }
+  h1, h2, h3, h4, h5, .display {
+    font-family: 'Fraunces', serif;
+    font-variation-settings: "SOFT" 30, "opsz" 144;
+    letter-spacing: -0.02em;
+  }
+  .ital-display {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-variation-settings: "SOFT" 50, "opsz" 144;
+  }
+  /* Paper grain texture */
+  .texture-grain {
+    position: relative;
+  }
+  .texture-grain::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.1 0 0 0 0 0.09 0 0 0 0 0.07 0 0 0 0.09 0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");
+    opacity: 0.4;
+    pointer-events: none;
+    mix-blend-mode: multiply;
+  }
+  /* Stitching pattern */
+  .stitch-border {
+    border-top: 2px dashed #6B1817;
+    border-bottom: 2px dashed #6B1817;
+  }
+  .divider-stitch {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .divider-stitch::before,
+  .divider-stitch::after {
+    content: '';
+    flex: 1;
+    border-top: 2px dashed #6B1817;
+    opacity: 0.4;
+  }
+  /* Custom button */
+  .btn-primary {
+    background: #6B1817;
+    color: #F2EBDC;
+    padding: 0.85rem 1.75rem;
+    font-family: 'Archivo';
+    font-weight: 600;
+    font-size: 0.85rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    border: 2px solid #6B1817;
+    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .btn-primary:hover {
+    background: #4A0F0E;
+    border-color: #4A0F0E;
+    transform: translateY(-1px);
+  }
+  .btn-ghost {
+    background: transparent;
+    color: #6B1817;
+    padding: 0.85rem 1.75rem;
+    font-family: 'Archivo';
+    font-weight: 600;
+    font-size: 0.85rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    border: 2px solid #6B1817;
+    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .btn-ghost:hover {
+    background: #6B1817;
+    color: #F2EBDC;
+  }
+  /* Eyebrow labels */
+  .eyebrow {
+    font-family: 'Archivo';
+    font-weight: 600;
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #8B5E34;
+  }
+  /* Page transitions */
+  .page {
+    display: none;
+    animation: fadeUp 0.4s ease;
+  }
+  .page.active {
+    display: block;
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  /* Nav link active state */
+  .nav-link {
+    position: relative;
+    padding-bottom: 2px;
+    transition: color 0.2s;
+  }
+  .nav-link.active {
+    color: #6B1817;
+  }
+  .nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: #6B1817;
+  }
+  /* Hero number stamp */
+  .number-stamp {
+    font-family: 'Fraunces', serif;
+    font-variation-settings: "SOFT" 80;
+    font-weight: 900;
+    color: #6B1817;
+    opacity: 0.08;
+    line-height: 1;
+    letter-spacing: -0.08em;
+  }
+  /* Leather card */
+  .leather-card {
+    background: linear-gradient(135deg, #EADFC8 0%, #E0D3B8 100%);
+    border: 1px solid #B8894A;
+    position: relative;
+  }
+  .leather-card::after {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    right: 8px;
+    bottom: 8px;
+    border: 1px dashed #8B5E34;
+    opacity: 0.4;
+    pointer-events: none;
+  }
+  /* Seal badge */
+  .seal {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 2px solid #6B1817;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: #F2EBDC;
+    position: relative;
+  }
+  .seal::before {
+    content: '';
+    position: absolute;
+    inset: 6px;
+    border: 1px solid #6B1817;
+    border-radius: 50%;
+  }
+  /* Photo placeholder with baseball texture */
+  .photo-placeholder {
+    background: linear-gradient(135deg, #8B5E34 0%, #6B4524 50%, #8B5E34 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  .photo-placeholder::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: 
+      radial-gradient(circle at 20% 30%, rgba(0,0,0,0.2) 0%, transparent 40%),
+      radial-gradient(circle at 80% 70%, rgba(255,255,255,0.08) 0%, transparent 30%);
+  }
+  .photo-placeholder::after {
+    content: attr(data-label);
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(242,235,220,0.6);
+    font-family: 'Archivo';
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-weight: 600;
+  }
+  /* Marquee */
+  .marquee {
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .marquee-inner {
+    display: inline-block;
+    animation: scroll 30s linear infinite;
+  }
+  @keyframes scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  /* Ticket stub */
+  .ticket {
+    position: relative;
+    background: #F2EBDC;
+    border: 2px solid #6B1817;
+  }
+  .ticket::before,
+  .ticket::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #F2EBDC;
+    border: 2px solid #6B1817;
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .ticket::before { left: -12px; border-right-color: transparent; }
+  .ticket::after { right: -12px; border-left-color: transparent; }
+  /* Tier card hover */
+  .tier-card {
+    transition: all 0.3s;
+  }
+  .tier-card:hover {
+    transform: translateY(-4px);
+  }
+  /* Reveal-on-load staggered */
+  .reveal {
+    animation: fadeUp 0.6s ease backwards;
+  }
+</style>
+</head>
+<body>
+
+<!-- ============== NAV ============== -->
+<nav class="sticky top-0 z-50 bg-cream/95 backdrop-blur-sm border-b border-oxblood/20">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 py-5 flex items-center justify-between">
+    <a href="#" data-page="home" class="flex items-center gap-3 group">
+      <!-- Logo mark -->
+      <div class="w-10 h-10 rounded-full border-2 border-oxblood flex items-center justify-center bg-cream">
+        <span class="font-display font-black text-oxblood text-lg leading-none">M</span>
+      </div>
+      <div>
+        <div class="font-display font-bold text-oxblood text-lg leading-none tracking-tight">Marshall's Home Team Sports</div>
+        <div class="text-[10px] tracking-[0.25em] uppercase text-leather font-medium mt-0.5">Waterdown, Ontario</div>
+      </div>
+    </a>
+    <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+      <a href="#" data-page="home" class="nav-link active">Home</a>
+      <a href="#" data-page="relacing" class="nav-link">Relacing</a>
+      <a href="#" data-page="coaching" class="nav-link">Coaching</a>
+      <a href="#" data-page="about" class="nav-link">About</a>
+      <a href="#" data-page="contact" class="btn-primary !py-2 !px-4 !text-xs">Book a Glove</a>
+    </div>
+    <button class="md:hidden text-oxblood" id="mobileMenuBtn">
+
+      <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+  </div>
+  <div id="mobileMenu" class="md:hidden hidden border-t border-oxblood/20 bg-cream">
+    <div class="px-6 py-4 flex flex-col gap-4">
+      <a href="#" data-page="home" class="nav-link">Home</a>
+      <a href="#" data-page="relacing" class="nav-link">Relacing</a>
+      <a href="#" data-page="coaching" class="nav-link">Coaching</a>
+      <a href="#" data-page="about" class="nav-link">About</a>
+      <a href="#" data-page="contact" class="btn-primary !justify-center">Book a Glove</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ============== HOME PAGE ============== -->
+<div class="page active" id="page-home">
+
+<!-- Hero -->
+<section class="relative overflow-hidden texture-grain pt-16 pb-24 md:pt-24 md:pb-32">
+  <div class="absolute top-20 right-4 md:right-12 number-stamp text-[20rem] md:text-[30rem] select-none pointer-events-none">6</div>
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 relative">
+    <div class="max-w-3xl reveal">
+      <div class="eyebrow mb-6">Glove Repair · Coaching · Since Forever</div>
+      <h1 class="text-5xl md:text-7xl lg:text-8xl font-display font-medium leading-[0.95] tracking-tight text-ink mb-8">
+        Don't buy new.<br>
+        <span class="ital-display text-oxblood">Fix your gamer.</span>
+      </h1>
+      <p class="text-lg md:text-xl text-ink/80 leading-relaxed mb-10 max-w-xl font-light">
+        Professional glove relacing and baseball coaching out of Waterdown, Ontario. One week turnaround. Local drop-off and pick-up available.
+      </p>
+      <div class="flex flex-wrap gap-4">
+        <a href="#" data-page="relacing" class="btn-primary">Fix My Glove →</a>
+        <a href="#" data-page="coaching" class="btn-ghost">Coaching</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Marquee -->
+<div class="bg-oxblood text-cream py-4 marquee border-y-2 border-oxbloodDark">
+  <div class="marquee-inner">
+    <span class="inline-block px-8 font-display text-xl italic">One week turnaround</span>
+    <span class="inline-block px-8 text-tan">★</span>
+    <span class="inline-block px-8 font-display text-xl italic">Real craftsman, not a shop</span>
+    <span class="inline-block px-8 text-tan">★</span>
+    <span class="inline-block px-8 font-display text-xl italic">Free local pickup</span>
+    <span class="inline-block px-8 text-tan">★</span>
+    <span class="inline-block px-8 font-display text-xl italic">25+ years of baseball</span>
+    <span class="inline-block px-8 text-tan">★</span>
+    <span class="inline-block px-8 font-display text-xl italic">One week turnaround</span>
+    <span class="inline-block px-8 text-tan">★</span>
+    <span class="inline-block px-8 font-display text-xl italic">Real craftsman, not a shop</span>
+    <span class="inline-block px-8 text-tan">★</span>
+    <span class="inline-block px-8 font-display text-xl italic">Free local pickup</span>
+    <span class="inline-block px-8 text-tan">★</span>
+    <span class="inline-block px-8 font-display text-xl italic">25+ years of baseball</span>
+    <span class="inline-block px-8 text-tan">★</span>
+  </div>
+</div>
+
+<!-- Two services -->
+<section class="py-20 md:py-28 bg-paper texture-grain">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+    <div class="grid md:grid-cols-2 gap-8 md:gap-12">
+      <!-- Relacing card -->
+      <div class="leather-card p-10 md:p-12 relative">
+        <div class="flex items-start justify-between mb-8">
+          <div>
+            <div class="eyebrow mb-3">Service One</div>
+            <h2 class="text-4xl md:text-5xl font-display font-medium text-ink leading-none">Relacing<br><span class="ital-display text-oxblood">& Repair</span></h2>
+          </div>
+          <div class="text-right">
+            <div class="text-xs text-leather font-medium tracking-widest uppercase">From</div>
+            <div class="font-display text-4xl font-medium text-oxblood">$45</div>
+          </div>
+        </div>
+        <p class="text-ink/80 leading-relaxed mb-6 font-light">
+          Popped a lace mid-season? Glove sitting in the garage, pancake-flat? Bring it back to life. Full relace, conditioning, pocket work, and break-in service.
+        </p>
+        <ul class="space-y-2 text-sm text-ink/70 mb-8">
+          <li class="flex items-center gap-2"><span class="text-oxblood">✓</span> Partial relace · 2–3 days</li>
+          <li class="flex items-center gap-2"><span class="text-oxblood">✓</span> Full relace · 3–5 days</li>
+          <li class="flex items-center gap-2"><span class="text-oxblood">✓</span> Full Service · 7–10 days</li>
+          <li class="flex items-center gap-2"><span class="text-oxblood">✓</span> Mid-repair photo updates</li>
+        </ul>
+        <a href="#" data-page="relacing" class="btn-primary">See Service Tiers →</a>
+      </div>
+      <!-- Coaching card -->
+      <div class="leather-card p-10 md:p-12 relative" style="background: linear-gradient(135deg, #E8DDC5 0%, #DBCEB0 100%);">
+        <div class="flex items-start justify-between mb-8">
+          <div>
+            <div class="eyebrow mb-3">Service Two</div>
+            <h2 class="text-4xl md:text-5xl font-display font-medium text-ink leading-none">Coaching<br><span class="ital-display text-oxblood">& Lessons</span></h2>
+          </div>
+          <div class="text-right">
+            <div class="text-xs text-leather font-medium tracking-widest uppercase">Coming</div>
+            <div class="font-display text-4xl font-medium text-oxblood">Soon</div>
+          </div>
+        </div>
+        <p class="text-ink/80 leading-relaxed mb-6 font-light">
+          25 years coaching. Team Ontario, Hamilton Astros, Central Ontario Baseball Board, Waterdown Minor. Private lessons, small groups, and practice planning — get in touch to talk about what you're looking for.
+        </p>
+        <ul class="space-y-2 text-sm text-ink/70 mb-8">
+          <li class="flex items-center gap-2"><span class="text-oxblood">✓</span> Private 1:1 lessons</li>
+          <li class="flex items-center gap-2"><span class="text-oxblood">✓</span> Small group skills</li>
+          <li class="flex items-center gap-2"><span class="text-oxblood">✓</span> Practice planning for teams</li>
+          <li class="flex items-center gap-2"><span class="text-oxblood">✓</span> Tryout prep + mechanics</li>
+        </ul>
+        <a href="#" data-page="contact" class="btn-primary">Get in Touch →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Legacy teaser -->
+<section class="py-20 md:py-32 relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+    <div class="grid md:grid-cols-12 gap-8 md:gap-16 items-center">
+      <div class="md:col-span-5">
+        <div class="photo-placeholder aspect-[4/5] rounded-sm" data-label="Murray Marshall · Team Ontario"></div>
+      </div>
+      <div class="md:col-span-7">
+        <div class="eyebrow mb-5">The Story Behind #6</div>
+        <h2 class="text-4xl md:text-6xl font-display font-medium leading-none tracking-tight text-ink mb-8">
+          Baseball<br>
+          <span class="ital-display text-oxblood">runs in the family.</span>
+        </h2>
+        <p class="text-lg text-ink/80 leading-relaxed mb-5 font-light">
+          My dad Murray was the first inductee into the Team Ontario Baseball Hall of Fame. Associate scout for the Toronto Blue Jays. He started the Hamilton Astros. His #6 jersey is retired.
+        </p>
+        <p class="text-lg text-ink/80 leading-relaxed mb-8 font-light">
+          I grew up in dugouts. He taught me to coach, taught me to play, and taught me that a good glove is worth fixing. That's what this business is.
+        </p>
+        <a href="#" data-page="about" class="btn-ghost">Read the Full Story →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Stats strip -->
+<section class="bg-oxblood text-cream py-16">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+    <div>
+      <div class="font-display text-5xl md:text-6xl font-medium">25+</div>
+      <div class="text-xs tracking-[0.25em] uppercase text-tan mt-2">Years Coaching</div>
+    </div>
+    <div>
+      <div class="font-display text-5xl md:text-6xl font-medium">4</div>
+      <div class="text-xs tracking-[0.25em] uppercase text-tan mt-2">Programs Led</div>
+    </div>
+    <div>
+      <div class="font-display text-5xl md:text-6xl font-medium">7</div>
+      <div class="text-xs tracking-[0.25em] uppercase text-tan mt-2">Day Turnaround</div>
+    </div>
+    <div>
+      <div class="font-display text-5xl md:text-6xl font-medium">$0</div>
+      <div class="text-xs tracking-[0.25em] uppercase text-tan mt-2">Local Pickup</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-24 md:py-32 bg-paper">
+  <div class="max-w-4xl mx-auto px-6 lg:px-10 text-center">
+    <div class="eyebrow mb-6">Let's Talk</div>
+    <h2 class="text-4xl md:text-6xl font-display font-medium leading-none mb-8">
+      Got a glove that<br>
+      <span class="ital-display text-oxblood">needs some love?</span>
+    </h2>
+    <p class="text-lg text-ink/80 mb-10 max-w-xl mx-auto font-light">
+      Send a few photos, get a quote within 24 hours, and your gamer back in a week.
+    </p>
+    <a href="#" data-page="contact" class="btn-primary">Start a Repair →</a>
+  </div>
+</section>
+
+</div><!-- /home -->
+
+<!-- ============== RELACING PAGE ============== -->
+<div class="page" id="page-relacing">
+
+<section class="pt-16 pb-12 md:pt-24 md:pb-16 texture-grain relative overflow-hidden">
+  <div class="absolute top-20 right-0 number-stamp text-[15rem] md:text-[24rem] select-none pointer-events-none" style="opacity: 0.05;">LACE</div>
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+    <div class="eyebrow mb-5">Relacing & Repair</div>
+    <h1 class="text-5xl md:text-7xl font-display font-medium leading-[0.95] tracking-tight mb-8">
+      Your gamer,<br>
+      <span class="ital-display text-oxblood">back in a week.</span>
+    </h1>
+    <p class="text-xl text-ink/80 max-w-2xl leading-relaxed font-light">
+      Full-service glove repair out of Waterdown. Basic relaces to complete restorations. Every glove gets photo updates mid-repair and comes back conditioned, ready to play.
+    </p>
+  </div>
+</section>
+
+<!-- Service tiers -->
+<section class="py-16 md:py-24 bg-paper">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+    <div class="flex items-end justify-between flex-wrap gap-6 mb-12">
+      <div>
+        <div class="eyebrow mb-3">Pricing</div>
+        <h2 class="text-4xl md:text-5xl font-display font-medium leading-none">Service tiers.</h2>
+      </div>
+      <p class="text-ink/70 max-w-md text-sm font-light">
+        Flat pricing, no "call for quote." Catcher's mitts and first base gloves add $15 to any tier.
+      </p>
+    </div>
+    
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <!-- Tier 1 -->
+      <div class="tier-card leather-card p-8">
+        <div class="flex items-center justify-between mb-6">
+          <div class="eyebrow">Tier 01</div>
+          <div class="w-8 h-8 rounded-full border border-oxblood flex items-center justify-center text-xs font-display text-oxblood">01</div>
+        </div>
+        <h3 class="font-display text-2xl font-medium leading-tight mb-2">Partial Relace</h3>
+        <p class="text-xs text-leather uppercase tracking-widest mb-5">Single section</p>
+        <div class="font-display text-4xl font-medium text-oxblood mb-6">$45</div>
+        <div class="text-sm text-ink/70 mb-4 font-light">2–3 day turnaround</div>
+        <div class="divider-stitch my-5"></div>
+        <ul class="text-sm text-ink/70 space-y-2 font-light">
+          <li>One section relaced</li>
+          <li>No cleaning included</li>
+          <li>Glove returned game-ready</li>
+        </ul>
+      </div>
+      <!-- Tier 2 -->
+      <div class="tier-card leather-card p-8" style="background: linear-gradient(135deg, #E0D3B8 0%, #D4C49E 100%);">
+        <div class="flex items-center justify-between mb-6">
+          <div class="eyebrow">Tier 02 · Popular</div>
+          <div class="w-8 h-8 rounded-full border border-oxblood flex items-center justify-center text-xs font-display text-oxblood">02</div>
+        </div>
+        <h3 class="font-display text-2xl font-medium leading-tight mb-2">Full Relace</h3>
+        <p class="text-xs text-leather uppercase tracking-widest mb-5">Complete rework</p>
+        <div class="font-display text-4xl font-medium text-oxblood mb-6">$80</div>
+        <div class="text-sm text-ink/70 mb-4 font-light">3–5 day turnaround</div>
+        <div class="divider-stitch my-5"></div>
+        <ul class="text-sm text-ink/70 space-y-2 font-light">
+          <li>Every lace replaced</li>
+          <li>Standard lace colours included</li>
+          <li>No cleaning included</li>
+        </ul>
+      </div>
+      <!-- Tier 3 -->
+      <div class="tier-card leather-card p-8">
+        <div class="flex items-center justify-between mb-6">
+          <div class="eyebrow">Tier 03</div>
+          <div class="w-8 h-8 rounded-full border border-oxblood flex items-center justify-center text-xs font-display text-oxblood">03</div>
+        </div>
+        <h3 class="font-display text-2xl font-medium leading-tight mb-2">Full Service</h3>
+        <p class="text-xs text-leather uppercase tracking-widest mb-5">Bring it all the way back</p>
+        <div class="font-display text-4xl font-medium text-oxblood mb-6">$125</div>
+        <div class="text-sm text-ink/70 mb-4 font-light">7–10 day turnaround</div>
+        <div class="divider-stitch my-5"></div>
+        <ul class="text-sm text-ink/70 space-y-2 font-light">
+          <li>Full relace</li>
+          <li>Deep cleaning</li>
+          <li>Conditioning + leather treatment</li>
+          <li>Minor stitching repair</li>
+          <li>Pocket rebuild</li>
+        </ul>
+      </div>
+      <!-- Tier 4 -->
+      <div class="tier-card leather-card p-8">
+        <div class="flex items-center justify-between mb-6">
+          <div class="eyebrow">Add-Ons</div>
+          <div class="w-8 h-8 rounded-full border border-oxblood flex items-center justify-center text-xs font-display text-oxblood">+</div>
+        </div>
+        <h3 class="font-display text-2xl font-medium leading-tight mb-2">Extras</h3>
+        <p class="text-xs text-leather uppercase tracking-widest mb-5">Mix & match</p>
+        <ul class="space-y-3 text-sm font-light">
+          <li class="flex items-center justify-between"><span>Break-in service</span><span class="font-display text-lg text-oxblood">$40</span></li>
+          <li class="flex items-center justify-between"><span>Clean & condition</span><span class="font-display text-lg text-oxblood">$45</span></li>
+          <li class="flex items-center justify-between"><span>Catcher's / 1B mitt</span><span class="font-display text-lg text-oxblood">+$15</span></li>
+          <li class="flex items-center justify-between"><span>Custom lace colour</span><span class="font-display text-lg text-oxblood">+$10</span></li>
+          <li class="flex items-center justify-between"><span>Glove locks</span><span class="font-display text-lg text-oxblood">$5</span></li>
+          <li class="flex items-center justify-between"><span>Leather dye</span><span class="font-display text-lg text-oxblood">Appraisal</span></li>
+          <li class="flex items-center justify-between"><span>Rush (48 hr)</span><span class="font-display text-lg text-oxblood">+$40</span></li>
+          <li class="flex items-center justify-between"><span>Minor stitch repair</span><span class="font-display text-lg text-oxblood">Appraisal</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Process -->
+<section class="py-20 md:py-28">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+    <div class="mb-16">
+      <div class="eyebrow mb-3">How It Works</div>
+      <h2 class="text-4xl md:text-5xl font-display font-medium leading-none">From pickup to playground.</h2>
+    </div>
+    <div class="grid md:grid-cols-4 gap-10 md:gap-6">
+      <div>
+        <div class="font-display text-7xl font-medium text-oxblood/20 leading-none mb-4">01</div>
+        <h3 class="font-display text-2xl font-medium mb-3">Send photos</h3>
+        <p class="text-sm text-ink/70 font-light leading-relaxed">Fill out the intake form. Snap photos of the glove (front, back, pocket, laces). Note your preferred lace color and deadline.</p>
+      </div>
+      <div>
+        <div class="font-display text-7xl font-medium text-oxblood/20 leading-none mb-4">02</div>
+        <h3 class="font-display text-2xl font-medium mb-3">Get a quote</h3>
+        <p class="text-sm text-ink/70 font-light leading-relaxed">Quote back within 24 hours with a flat price, tier, and ETA. 50% deposit to book the slot.</p>
+      </div>
+      <div>
+        <div class="font-display text-7xl font-medium text-oxblood/20 leading-none mb-4">03</div>
+        <h3 class="font-display text-2xl font-medium mb-3">Drop off or ship</h3>
+        <p class="text-sm text-ink/70 font-light leading-relaxed">Drop off and pick up from my location in Waterdown. A secure drop box is available for after-hours. Mail-in available with prepaid return label.</p>
+      </div>
+      <div>
+        <div class="font-display text-7xl font-medium text-oxblood/20 leading-none mb-4">04</div>
+        <h3 class="font-display text-2xl font-medium mb-3">Back to play</h3>
+        <p class="text-sm text-ink/70 font-light leading-relaxed">Photo update mid-repair. Final photo on completion. Returned with care instructions and a 10% off next service voucher.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Before/After gallery -->
+<section class="py-20 md:py-28 bg-paper">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+    <div class="flex items-end justify-between flex-wrap gap-6 mb-12">
+      <div>
+        <div class="eyebrow mb-3">Recent Work</div>
+        <h2 class="text-4xl md:text-5xl font-display font-medium leading-none">Before &amp; <span class="ital-display text-oxblood">after.</span></h2>
+      </div>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div>
+        <div class="photo-placeholder aspect-square mb-3" data-label="A2000 · Full Relace · Tan"></div>
+        <div class="text-xs text-leather uppercase tracking-widest">Wilson A2000 · Tan lace</div>
+      </div>
+      <div>
+        <div class="photo-placeholder aspect-square mb-3" data-label="Heart of the Hide · Restoration"></div>
+        <div class="text-xs text-leather uppercase tracking-widest">Heart of the Hide · Full restoration</div>
+      </div>
+      <div>
+        <div class="photo-placeholder aspect-square mb-3" data-label="Pro Preferred · Catcher's"></div>
+        <div class="text-xs text-leather uppercase tracking-widest">Pro Preferred · Catcher's mitt</div>
+      </div>
+      <div>
+        <div class="photo-placeholder aspect-square mb-3" data-label="Mizuno Classic · Custom"></div>
+        <div class="text-xs text-leather uppercase tracking-widest">Mizuno · Custom red & black</div>
+      </div>
+      <div>
+        <div class="photo-placeholder aspect-square mb-3" data-label="Rawlings Youth · Relace"></div>
+        <div class="text-xs text-leather uppercase tracking-widest">Rawlings Youth · Full relace</div>
+      </div>
+      <div>
+        <div class="photo-placeholder aspect-square mb-3" data-label="First Base · Pocket Rebuild"></div>
+        <div class="text-xs text-leather uppercase tracking-widest">First base · Pocket rebuild</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="py-20 md:py-28">
+  <div class="max-w-4xl mx-auto px-6 lg:px-10">
+    <div class="eyebrow mb-3">Questions</div>
+    <h2 class="text-4xl md:text-5xl font-display font-medium leading-none mb-12">The answers you'd ask for.</h2>
+    <div class="space-y-0 border-t border-oxblood/20">
+      <details class="group border-b border-oxblood/20 py-6 cursor-pointer">
+        <summary class="flex justify-between items-center list-none">
+          <span class="font-display text-xl font-medium">How long does a full relace take?</span>
+          <span class="text-oxblood text-2xl font-display group-open:rotate-45 transition-transform">+</span>
+        </summary>
+        <p class="mt-4 text-ink/70 font-light leading-relaxed">Three to five days from when I receive the glove. Partial relaces (single section) can usually turn around in 2–3 days. Need it faster? A $40 rush fee gets you 48 hours.</p>
+      </details>
+      <details class="group border-b border-oxblood/20 py-6 cursor-pointer">
+        <summary class="flex justify-between items-center list-none">
+          <span class="font-display text-xl font-medium">What if the leather is too far gone?</span>
+          <span class="text-oxblood text-2xl font-display group-open:rotate-45 transition-transform">+</span>
+        </summary>
+        <p class="mt-4 text-ink/70 font-light leading-relaxed">I'll tell you before charging. If the leather can't support new laces, relacing won't hold and I won't pretend it will. Send photos first and I'll give you an honest read.</p>
+      </details>
+      <details class="group border-b border-oxblood/20 py-6 cursor-pointer">
+        <summary class="flex justify-between items-center list-none">
+          <span class="font-display text-xl font-medium">Can you match my lace color exactly?</span>
+          <span class="text-oxblood text-2xl font-display group-open:rotate-45 transition-transform">+</span>
+        </summary>
+        <p class="mt-4 text-ink/70 font-light leading-relaxed">Standard colors (tan, black, brown) are always in stock. Custom colors (red, navy, royal blue, white, orange, pink) add $10. I'll send a photo of the lace sample before starting.</p>
+      </details>
+      <details class="group border-b border-oxblood/20 py-6 cursor-pointer">
+        <summary class="flex justify-between items-center list-none">
+          <span class="font-display text-xl font-medium">How does pickup work?</span>
+          <span class="text-oxblood text-2xl font-display group-open:rotate-45 transition-transform">+</span>
+        </summary>
+        <p class="mt-4 text-ink/70 font-light leading-relaxed">Drop off and pick up from my location in Waterdown. A secure drop box is available for after-hours drop-off and collection — no need to coordinate schedules. Outside the area, mail-in with prepaid return label is available. Return shipping is included in the price for mail-in.</p>
+      </details>
+      <details class="group border-b border-oxblood/20 py-6 cursor-pointer">
+        <summary class="flex justify-between items-center list-none">
+          <span class="font-display text-xl font-medium">What if I'm not happy with the work?</span>
+          <span class="text-oxblood text-2xl font-display group-open:rotate-45 transition-transform">+</span>
+        </summary>
+        <p class="mt-4 text-ink/70 font-light leading-relaxed">I'll make it right. If you're not satisfied with the relacing, I'll redo it or refund the labor. No arguing about it.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-20 md:py-28 bg-oxblood text-cream">
+  <div class="max-w-4xl mx-auto px-6 lg:px-10 text-center">
+    <h2 class="text-4xl md:text-6xl font-display font-medium leading-none mb-8">
+      Ready to fix<br>
+      <span class="ital-display text-tan">that glove?</span>
+    </h2>
+    <a href="#" data-page="contact" class="inline-flex items-center gap-2 bg-cream text-oxblood px-8 py-4 text-sm font-semibold tracking-[0.12em] uppercase hover:bg-tan hover:text-ink transition border-2 border-cream">Book a Repair →</a>
+  </div>
+</section>
+
+</div><!-- /relacing -->
+
+<!-- ============== COACHING PAGE ============== -->
+<div class="page" id="page-coaching">
+
+<section class="pt-16 pb-12 md:pt-24 md:pb-16 texture-grain relative overflow-hidden">
+  <div class="absolute top-10 right-0 number-stamp text-[15rem] md:text-[22rem] select-none pointer-events-none" style="opacity: 0.05;">COACH</div>
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+    <div class="eyebrow mb-5">Coaching & Lessons</div>
+    <h1 class="text-5xl md:text-7xl font-display font-medium leading-[0.95] tracking-tight mb-8">
+      25 years,<br>
+      <span class="ital-display text-oxblood">four programs.</span>
+    </h1>
+    <p class="text-xl text-ink/80 max-w-2xl leading-relaxed font-light">
+      Team Ontario. Hamilton Astros. Central Ontario Baseball Board. Waterdown Minor. Private lessons, small groups, practice planning, and more — coming soon. Get in touch to talk about what you're looking for.
+    </p>
+    <div class="mt-10">
+      <a href="#" data-page="contact" class="btn-primary">Get in Touch →</a>
+    </div>
+  </div>
+</section>
+
+</div><!-- /coaching -->
+
+
+<!-- ============== ABOUT PAGE ============== -->
+<div class="page" id="page-about">
+
+<section class="pt-16 pb-12 md:pt-24 md:pb-16 texture-grain relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+    <div class="eyebrow mb-5">About Marshall's Home Team Sports</div>
+    <h1 class="text-5xl md:text-7xl font-display font-medium leading-[0.95] tracking-tight mb-8 max-w-4xl">
+      Home<br>
+      <span class="ital-display text-oxblood">Team.</span>
+    </h1>
+  </div>
+</section>
+
+<!-- Murray's story -->
+<section class="py-16 md:py-20">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 grid md:grid-cols-12 gap-12 items-start">
+    <div class="md:col-span-5">
+      <div class="photo-placeholder aspect-[4/5] mb-4" data-label="Murray Marshall · 1980s"></div>
+      <div class="flex items-center gap-4">
+        <div class="seal">
+          <div class="text-xs tracking-[0.2em] uppercase text-oxblood font-semibold">Team Ontario</div>
+          <div class="font-display text-4xl font-medium text-oxblood leading-none my-1">#6</div>
+          <div class="text-xs tracking-[0.2em] uppercase text-oxblood font-semibold">HOF '17</div>
+        </div>
+        <div class="text-sm text-ink/70 font-light">
+          Murray Marshall's retired Team Ontario jersey. Inaugural HOF inductee.
+        </div>
+      </div>
+    </div>
+    <div class="md:col-span-7">
+      <div class="eyebrow mb-3">Murray Marshall · 1957–2017</div>
+      <h2 class="text-4xl md:text-5xl font-display font-medium leading-none mb-8">
+        My dad<br>
+        <span class="ital-display text-oxblood">taught me this game.</span>
+      </h2>
+      <div class="space-y-5 text-lg text-ink/80 font-light leading-relaxed">
+        <p>
+          My dad was a baseball lifer. Deeply respected, with a career that touched more players and families than I could count. He taught me to coach, to compete, and to care about the people in the dugout more than the scoreboard.
+        </p>
+        <p>
+          He had a phrase he'd use with me — at the end of a hard conversation, or a tough stretch, or just to check in. <em>"Home Team?"</em> His way of saying: whatever else is happening, we're good. We're solid. We love each other.
+        </p>
+        <p>
+          After he passed, that phrase didn't go anywhere. My sisters, their families, my wife, our kids, my mother — we still call ourselves the Home Team. It's the name of our group chat. It's how we close a hard conversation. It's what we are.
+        </p>
+        <p>
+          So when it came time to put a name on this business, there was only one answer.
+        </p>
+        <p class="text-oxblood ital-display text-xl">
+          Marshall's Home Team Sports.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Brock's story -->
+<section class="py-20 md:py-28 bg-paper">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 grid md:grid-cols-12 gap-12 items-start">
+    <div class="md:col-span-7 order-2 md:order-1">
+      <div class="eyebrow mb-3">Brock Marshall · Founder</div>
+      <h2 class="text-4xl md:text-5xl font-display font-medium leading-none mb-8">
+        I grew up<br>
+        <span class="ital-display text-oxblood">in the dugout.</span>
+      </h2>
+      <div class="space-y-5 text-lg text-ink/80 font-light leading-relaxed">
+        <p>
+          Baseball has been in my life since before I can remember. The first memories are the clearest ones — tee ball in the backyard, games at Exhibition Stadium with my dad, Running Bases (what most people call Pickle) with my sisters and cousins at Marshall Family Weekends. A catch with my brother-in-law at the cottage.
+        </p>
+        <p>
+          My sisters played too — baseball first, then softball, then adult rec ball for years after. The game has always been how our family shows up for each other.
+        </p>
+        <p>
+          I played from the time I was three and a half until I was nearly forty-two. Minor ball through high-level travel, college baseball, and Senior AAA in Ontario. I began coaching right out of college — travelled through Canada and the United States coaching top 16 and 18-year-olds with the Hamilton Astros and Team Ontario.
+        </p>
+        <p>
+          I met my wife through baseball. I had coached her brother. So had my dad. She is — without question — the greatest win of my life, in baseball or otherwise.
+        </p>
+        <p>
+          My son plays now. I coach his team. I try to let him have his own journey in this game — his story, not mine. But I'll never pass up a chance to have a catch with him. That part I'm keeping.
+        </p>
+      </div>
+      <div class="mt-10 p-6 border-l-4 border-oxblood bg-cream">
+        <div class="ital-display text-2xl text-oxblood leading-snug">
+          "Home Team?"
+        </div>
+        <div class="text-xs tracking-[0.2em] uppercase text-leather mt-3 font-semibold">— Murray Marshall</div>
+        <div class="text-sm text-ink/70 font-light mt-3 leading-relaxed">His way of saying: whatever else is happening, we're good. We're solid. We love each other. After he passed, that phrase didn't go anywhere. My sisters, their families, my wife, our kids, my mother — we still call ourselves the Home Team. It's the name of our group chat. It's what we are. So when it came time to name this business, there was only one answer.</div>
+      </div>
+    </div>
+    <div class="md:col-span-5 order-1 md:order-2">
+      <div class="photo-placeholder aspect-[4/5]" data-label="Brock Marshall · Waterdown"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Values / what we care about -->
+<section class="py-20 md:py-28">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+    <div class="mb-16">
+      <div class="eyebrow mb-3">What We Care About</div>
+      <h2 class="text-4xl md:text-5xl font-display font-medium leading-none">Three things.</h2>
+    </div>
+    <div class="grid md:grid-cols-3 gap-10">
+      <div>
+        <div class="font-display text-6xl font-medium text-oxblood/30 leading-none mb-4">01</div>
+        <h3 class="font-display text-2xl font-medium mb-3">Your glove is worth fixing.</h3>
+        <p class="text-ink/70 font-light leading-relaxed">A great friend will always be there for you. New gloves and friends are great, but never quite the same.</p>
+      </div>
+      <div>
+        <div class="font-display text-6xl font-medium text-oxblood/30 leading-none mb-4">02</div>
+        <h3 class="font-display text-2xl font-medium mb-3">The margins matter most.</h3>
+        <p class="text-ink/70 font-light leading-relaxed">The best coaching happens in the margins — the postgame conversation, the quiet moment when a kid is figuring it out, the embrace of the struggle and the celebration of progress.</p>
+      </div>
+      <div>
+        <div class="font-display text-6xl font-medium text-oxblood/30 leading-none mb-4">03</div>
+        <h3 class="font-display text-2xl font-medium mb-3">Home Team first. Always.</h3>
+        <p class="text-ink/70 font-light leading-relaxed">The game brought me everything. The family is why it matters.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-20 md:py-24 bg-oxblood text-cream">
+  <div class="max-w-4xl mx-auto px-6 lg:px-10 text-center">
+    <h2 class="text-4xl md:text-5xl font-display font-medium leading-none mb-6">
+      Thanks for reading.
+    </h2>
+    <p class="text-cream/80 mb-8 font-light">Let's get your glove back in the game.</p>
+    <a href="#" data-page="contact" class="inline-flex items-center gap-2 bg-cream text-oxblood px-8 py-4 text-sm font-semibold tracking-[0.12em] uppercase hover:bg-tan transition border-2 border-cream">Get in Touch →</a>
+  </div>
+</section>
+
+</div><!-- /about -->
+
+<!-- ============== CONTACT PAGE ============== -->
+<div class="page" id="page-contact">
+
+<section class="pt-16 pb-12 md:pt-24 md:pb-16 texture-grain">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+    <div class="eyebrow mb-5">Contact · Booking</div>
+    <h1 class="text-5xl md:text-7xl font-display font-medium leading-[0.95] tracking-tight mb-8">
+      Send a few<br>
+      <span class="ital-display text-oxblood">photos.</span>
+    </h1>
+    <p class="text-xl text-ink/80 max-w-2xl leading-relaxed font-light">
+      Tell me what you're working with. I'll quote back within 24 hours with a price, timeline, and next steps.
+    </p>
+  </div>
+</section>
+
+<section class="py-16 md:py-20">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 grid md:grid-cols-12 gap-12">
+    <!-- Form -->
+      <div class="md:col-span-8">
+      <div class="leather-card p-10">
+        <form name="intake" method="POST" data-netlify="true" netlify-honeypot="bot-field" enctype="multipart/form-data">
+        <input type="hidden" name="form-name" value="intake">
+        <p class="hidden"><label>Don't fill this out: <input name="bot-field"></label></p>
+        <div class="grid md:grid-cols-2 gap-6 mb-6">
+          <div>
+            <label class="eyebrow block mb-2">Your Name</label>
+            <input type="text" name="name" class="w-full bg-cream border border-oxblood/30 px-4 py-3 text-ink focus:outline-none focus:border-oxblood" placeholder="Your name">
+          </div>
+          <div>
+            <label class="eyebrow block mb-2">Phone or Email</label>
+            <input type="text" name="email" class="w-full bg-cream border border-oxblood/30 px-4 py-3 text-ink focus:outline-none focus:border-oxblood" placeholder="you@example.com">
+          </div>
+        </div>
+        <div class="mb-6">
+          <label class="eyebrow block mb-2">What do you need?</label>
+          <select name="service" class="w-full bg-cream border border-oxblood/30 px-4 py-3 text-ink focus:outline-none focus:border-oxblood">
+            <option>Partial relace (single section) — $45</option>
+            <option>Full relace — $80</option>
+            <option>Full Service (relace + clean + condition) — $125</option>
+            <option>Break-in only — $40</option>
+            <option>Clean & condition only — $45</option>
+            <option>Coaching — get in touch</option>
+            <option>Not sure — need advice</option>
+          </select>
+        </div>
+        <div class="grid md:grid-cols-2 gap-6 mb-6">
+          <div>
+            <label class="eyebrow block mb-2">Preferred Lace Colour</label>
+            <select name="lace_color" class="w-full bg-cream border border-oxblood/30 px-4 py-3 text-ink focus:outline-none focus:border-oxblood">
+              <option>Cork / Tan (standard)</option>
+              <option>Black (standard)</option>
+              <option>Custom colour (+$10) — specify in notes</option>
+            </select>
+          </div>
+          <div>
+            <label class="eyebrow block mb-2">Drop-off or Mail-in?</label>
+            <select name="dropoff_or_mailin" class="w-full bg-cream border border-oxblood/30 px-4 py-3 text-ink focus:outline-none focus:border-oxblood">
+              <option>Drop-off / Pick-up in Waterdown</option>
+              <option>Mail-in (return shipping included)</option>
+              <option>Not sure yet</option>
+            </select>
+          </div>
+        </div>
+        <div class="mb-6">
+          <label class="eyebrow block mb-2">When Do You Need It?</label>
+          <input type="text" name="deadline" class="w-full bg-cream border border-oxblood/30 px-4 py-3 text-ink focus:outline-none focus:border-oxblood" placeholder="Tryouts · Season start · ASAP · No rush">
+        </div>
+        <div class="mb-6">
+          <label class="eyebrow block mb-2">Tell Me More</label>
+          <textarea rows="5" name="message" class="w-full bg-cream border border-oxblood/30 px-4 py-3 text-ink focus:outline-none focus:border-oxblood" placeholder="Make/model, what's broken, position, kid's age, anything else..."></textarea>
+        </div>
+        <div class="mb-8">
+          <label class="eyebrow block mb-2">Upload Photos</label>
+          <input type="file" name="photos" multiple accept="image/*" class="w-full bg-cream border border-oxblood/30 px-4 py-3 text-ink focus:outline-none focus:border-oxblood">
+          <div class="text-xs text-ink/50 mt-2">Front, back, pocket, laces. JPG or PNG.</div>
+        </div>
+        <button type="submit" class="btn-primary w-full md:w-auto !justify-center">Send Request →</button>
+        </form>
+      </div>
+    </div>
+    <!-- Sidebar -->
+    <div class="md:col-span-4">
+      <div class="ticket p-8 mb-8">
+        <div class="eyebrow mb-4">Direct Contact</div>
+        <div class="space-y-5 text-sm">
+          <div>
+            <div class="text-xs text-leather uppercase tracking-widest mb-1">Text or Call</div>
+            <div class="font-display text-xl text-ink">(289) 439-5134</div>
+          </div>
+          <div>
+            <div class="text-xs text-leather uppercase tracking-widest mb-1">Email</div>
+            <div class="font-display text-xl text-ink">hey@marshallshometeamsports.com</div>
+          </div>
+          <div>
+            <div class="text-xs text-leather uppercase tracking-widest mb-1">Based in</div>
+            <div class="font-display text-xl text-ink">Waterdown, ON</div>
+          </div>
+        </div>
+      </div>
+      <div class="p-6 border-l-4 border-oxblood">
+        <div class="eyebrow mb-2">Drop-off & Pick-up</div>
+        <div class="text-sm text-ink/70 font-light leading-relaxed">
+          Drop off and pick up from my location in Waterdown. Secure drop box available for after-hours. Mail-in available anywhere in Canada — return shipping included.
+        </div>
+      </div>
+      <div class="p-6 mt-4 border-l-4 border-leather">
+        <div class="eyebrow mb-2">Hours</div>
+        <div class="text-sm text-ink/70 font-light leading-relaxed">
+          Mon–Fri · 9am–8pm<br>
+          Saturday · 10am–4pm<br>
+          Sunday · by appointment
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div><!-- /contact -->
+
+<!-- ============== FOOTER ============== -->
+<footer class="bg-ink text-cream pt-20 pb-8">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+    <div class="grid md:grid-cols-12 gap-10 mb-16">
+      <div class="md:col-span-5">
+        <div class="flex items-center gap-3 mb-5">
+          <div class="w-10 h-10 rounded-full border-2 border-cream flex items-center justify-center">
+            <span class="font-display font-black text-cream text-lg leading-none">M</span>
+          </div>
+          <div>
+            <div class="font-display font-bold text-cream text-lg leading-none">Marshall's Home Team Sports</div>
+            <div class="text-[10px] tracking-[0.25em] uppercase text-tan font-medium mt-0.5">Waterdown, Ontario</div>
+          </div>
+        </div>
+        <p class="text-cream/70 text-sm font-light leading-relaxed max-w-md">
+          Professional glove repair and baseball coaching out of Waterdown, Ontario. Family-run. Craft-focused. Part of the community we serve.
+        </p>
+      </div>
+      <div class="md:col-span-2">
+        <div class="text-xs tracking-[0.25em] uppercase text-tan font-semibold mb-4">Services</div>
+        <ul class="space-y-2 text-sm">
+          <li><a href="#" data-page="relacing" class="text-cream/70 hover:text-cream">Glove Relacing</a></li>
+          <li><a href="#" data-page="coaching" class="text-cream/70 hover:text-cream">Coaching</a></li>
+          <li><a href="#" data-page="contact" class="text-cream/70 hover:text-cream">Bookings</a></li>
+        </ul>
+      </div>
+      <div class="md:col-span-2">
+        <div class="text-xs tracking-[0.25em] uppercase text-tan font-semibold mb-4">Company</div>
+        <ul class="space-y-2 text-sm">
+          <li><a href="#" data-page="about" class="text-cream/70 hover:text-cream">About</a></li>
+          <li><a href="#" data-page="contact" class="text-cream/70 hover:text-cream">Contact</a></li>
+          <li><a href="#" class="text-cream/70 hover:text-cream">Coach Referrals</a></li>
+        </ul>
+      </div>
+      <div class="md:col-span-3">
+        <div class="text-xs tracking-[0.25em] uppercase text-tan font-semibold mb-4">Stay in Touch</div>
+        <p class="text-cream/70 text-sm font-light mb-4">Seasonal tips on glove care and coaching. No spam, ever.</p>
+        <form name="newsletter" method="POST" data-netlify="true" class="flex gap-2">
+          <input type="hidden" name="form-name" value="newsletter">
+          <input type="email" name="email" placeholder="you@email.com" class="flex-1 bg-transparent border border-cream/30 px-3 py-2 text-sm text-cream placeholder-cream/40 focus:outline-none focus:border-cream">
+          <button type="submit" class="bg-oxblood text-cream px-4 py-2 text-xs font-semibold tracking-widest uppercase hover:bg-oxbloodDark transition">Join</button>
+        </form>
+      </div>
+    </div>
+    <div class="pt-8 border-t border-cream/20 flex flex-wrap justify-between items-center gap-4 text-xs text-cream/50">
+      <div>© 2026 Marshall's Home Team Sports · Waterdown, Ontario</div>
+      <div class="flex items-center gap-2">
+        <span class="ital-display text-tan">In memory of</span>
+        <span class="font-semibold text-cream/70">Murray Marshall · #6</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Page routing
+  document.querySelectorAll('[data-page]').forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const target = link.dataset.page;
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      document.getElementById('page-' + target).classList.add('active');
+      document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+      document.querySelectorAll(`.nav-link[data-page="${target}"]`).forEach(l => l.classList.add('active'));
+      window.scrollTo({ top: 0, behavior: 'instant' });
+      // close mobile menu
+      document.getElementById('mobileMenu').classList.add('hidden');
+    });
+  });
+  // Mobile menu toggle
+  document.getElementById('mobileMenuBtn').addEventListener('click', () => {
+    document.getElementById('mobileMenu').classList.toggle('hidden');
+  });
+
+  // Handle form submission via fetch to avoid page redirect
+  const intakeForm = document.querySelector('form[name="intake"]');
+  if (intakeForm) {
+    intakeForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const formData = new FormData(intakeForm);
+      try {
+        await fetch('/', {
+          method: 'POST',
+          body: formData,
+        });
+        // Show success message
+        intakeForm.innerHTML = `
+          <div class="text-center py-12">
+            <div class="font-display text-5xl text-oxblood mb-6">✓</div>
+            <h3 class="font-display text-3xl font-medium mb-4">Request received.</h3>
+            <p class="text-ink/70 font-light leading-relaxed max-w-md mx-auto">Thanks for reaching out. I'll quote back within 24 hours with a flat price, timeline, and next steps.</p>
+          </div>`;
+      } catch (error) {
+        intakeForm.innerHTML = `
+          <div class="text-center py-12">
+            <h3 class="font-display text-2xl font-medium mb-4 text-oxblood">Something went wrong.</h3>
+            <p class="text-ink/70 font-light">Please try again or reach out directly at (289) 439-5134.</p>
+          </div>`;
+      }
+    });
+  }
+</script>
+
+</body>
+</html>
