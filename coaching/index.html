@@ -402,6 +402,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           body: params.toString(),
         });
         if (res.ok) {
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({
+            event: 'coaching_interest',
+            event_id: (window.crypto && crypto.randomUUID) ? crypto.randomUUID() : Date.now() + '-' + Math.random(),
+            user_data: { email_address: formData.get('email') || '' }
+          });
           coachingForm.innerHTML = '<p class="text-ink/80 font-light text-lg">Thanks, I\'ll let you know.</p>';
         } else {
           throw new Error('Submit failed');
@@ -426,6 +432,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           body: params.toString(),
         });
         if (res.ok) {
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({
+            event: 'newsletter_signup',
+            event_id: (window.crypto && crypto.randomUUID) ? crypto.randomUUID() : Date.now() + '-' + Math.random(),
+            form_location: 'coaching',
+            user_data: { email_address: formData.get('email') || '' }
+          });
           newsletterForm.outerHTML = '<p class="text-cream/70 text-sm font-light">Thanks, you\'re on the list.</p>';
         } else {
           throw new Error('Submit failed');
