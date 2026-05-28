@@ -550,6 +550,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           body: formData,
         });
         if (res.ok) {
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({
+            event: 'glove_repair_booking',
+            event_id: (window.crypto && crypto.randomUUID) ? crypto.randomUUID() : Date.now() + '-' + Math.random(),
+            user_data: {
+              email_address: email,
+              phone_number: phone,
+              first_name: formData.get('first_name') || '',
+              last_name: formData.get('last_name') || ''
+            }
+          });
           intakeForm.innerHTML = `
             <div class="text-center py-12">
               <div class="font-display text-5xl text-oxblood mb-6">✓</div>
@@ -583,6 +594,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           body: params.toString(),
         });
         if (res.ok) {
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({
+            event: 'newsletter_signup',
+            event_id: (window.crypto && crypto.randomUUID) ? crypto.randomUUID() : Date.now() + '-' + Math.random(),
+            form_location: 'contact',
+            user_data: { email_address: formData.get('email') || '' }
+          });
           newsletterForm.outerHTML = '<p class="text-cream/70 text-sm font-light">Thanks, you\'re on the list.</p>';
         } else {
           throw new Error('Submit failed');
