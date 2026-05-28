@@ -1,15 +1,2 @@
-[[redirects]]
-  from = "/*"
-  to = "https://marshallshometeam.ca/:splat"
-  status = 301
-  force = true
-  [redirects.conditions]
-    Host = ["marshallshometeamsports.com", "www.marshallshometeamsports.com"]
-
-[[redirects]]
-  from = "/*"
-  to = "https://marshallshometeam.ca/:splat"
-  status = 301
-  force = true
-  [redirects.conditions]
-    Host = ["marshallhometeam.ca", "www.marshallhometeam.ca"]
+[build]
+  publish = "."
