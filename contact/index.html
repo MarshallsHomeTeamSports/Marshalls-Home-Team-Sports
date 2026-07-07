@@ -554,10 +554,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           body: formData,
         });
         if (res.ok) {
+          const SERVICE_VALUES = {
+            'partial-relace': 45, 'full-relace': 80, 'full-service': 125,
+            'break-in': 40, 'clean-condition': 45, 'coaching': 0, 'advice': 0
+          };
+          const service = formData.get('service') || '';
+          const bookingValue = SERVICE_VALUES[service] || 0;
           window.dataLayer = window.dataLayer || [];
           window.dataLayer.push({
             event: 'glove_repair_booking',
             event_id: (window.crypto && crypto.randomUUID) ? crypto.randomUUID() : Date.now() + '-' + Math.random(),
+            service: service,
+            value: bookingValue,
+            currency: 'CAD',
             user_data: {
               email_address: email,
               phone_number: phone,
