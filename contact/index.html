@@ -559,7 +559,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             'break-in': 40, 'clean-condition': 45, 'coaching': 0, 'advice': 0
           };
           const service = formData.get('service') || '';
-          const bookingValue = SERVICE_VALUES[service] || 0;
+          const baseValue = SERVICE_VALUES[service] || 0;
+          // Add-ons apply only to priced relacing services (not coaching/advice)
+          let addOns = 0;
+          if (baseValue > 0) {
+            if ((formData.get('deadline') || '') === 'rush') addOns += 40;             // Rush, 48hr (+$40)
+            if (/custom colour/i.test(formData.get('lace_color') || '')) addOns += 10; // Custom lace colour (+$10)
+          }
+          const bookingValue = baseValue + addOns;
           window.dataLayer = window.dataLayer || [];
           window.dataLayer.push({
             event: 'glove_repair_booking',
